@@ -19,7 +19,7 @@ PRJ_LIBRARY="$FULL_PATH/library"
 # the installed library; so check to see if that is setup or not.
 
 if [ -z "$ANSIBLE_LIBRARY" ]; then
-  export ANSIBLE_LIBRARY=$(grep library /etc/ansible/ansible.cfg |  awk '{ /(.*) = (.*)/; print $3 }')
+  export ANSIBLE_LIBRARY=$(grep library /usr/local/etc/ansible/ansible.cfg |  awk '{ /(.*) = (.*)/; print $3 }')
 fi
 
 [[ $ANSIBLE_LIBRARY != ${PRJ_LIBRARY}* ]] && export ANSIBLE_LIBRARY=$PRJ_LIBRARY:$ANSIBLE_LIBRARY
